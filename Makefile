@@ -5,14 +5,15 @@ all : py ja _compile
 
 antlr4 := java -Xmx500M -cp "/usr/local/lib/antlr-4.9.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool
 grun := java -Xmx500M -cp "/usr/local/lib/antlr-4.9.2-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig
-antlr_formatter := java -jar /usr/local/lib/antlr4-formatter-standalone-1.2.1.jar --input
 
 filedir := ./grammars-v4/antlr/antlr4/
-filename := ANTLRv4Parser.g4
 out_java := ./java
 out_python := ./py
 
 options := -visitor
+
+# Change it to target .g4 file
+filename := ANTLRv4Parser.g4
 version := $(shell git log -n 1 --pretty=format:%H -- $(filename) | cut -c 1-8)
 
 py:
