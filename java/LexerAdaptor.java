@@ -1,0 +1,1 @@
+../grammars-v4/antlr/antlr4/Java/LexerAdaptor.java
